@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      List of all bookmarks
+      My bookmarks
     </h1>
   </div>
 </div>
@@ -30,6 +30,15 @@
 
         <input type="text" id="movie_id_box" name="query_movie_id">
       </div>
+
+      
+      <select name= "query_movie_id">
+      <% Movie.all.order(:title).each do |a_movie| %>
+        <option value="<%=a_movie.id%>>
+          <%= a_movie.title%>
+        </option>
+      <%end%>
+      </select>
 
       <button>
         Create bookmark
